@@ -5,7 +5,7 @@ const db = require('./database');
 
 const syncDatabase = async () => {
   try {
-    await db.sync();  
+    await db.sync({force: true});  
     console.log('------Synced to db--------')
     await seedDB();
     console.log('--------Successfully seeded db--------');
