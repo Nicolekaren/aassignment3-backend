@@ -12,13 +12,21 @@ const seedDB = async () => {
 		department: "Computer Science"
 	});
 
-	const dummyTask = await Task.create({
-		description: "Dummy Task",
+	const dummyTask1 = await Task.create({
+		description: "Sales",
         prioritylevel: "High",
         completionstatus: false
 	});
 
-	await dummyTask.setEmployee(dummyEmployee);
+	const dummyTask2 = await Task.create({
+		description: "Administration",
+        prioritylevel: "High",
+        completionstatus: false
+	});
+
+
+	await dummyTask1.setEmployee(dummyEmployee);
+	await dummyTask2.setEmployee(dummyEmployee2);
 	
 }
 
